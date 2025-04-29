@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <list>
+#include <set>
+#include <algorithm>
+#include <iterator>
+
+template<typename containertype, typename elementstype>
+size_t count_elem(const containertype& container, const elementstype& elements)
+{
+    size_t counter = 0;
+    for(int i = 0; i < elements.size(); i++)
+    {
+        el = elements[i];
+        if(std::find(std::begin(container),std::end(container),el) != std::end(container))
+        {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+
+int main()
+{
+    std::vector<int> vec = {1, 2, 3, 4, 5, 6};
+    std::vector<int> elements_to_check = {5 ,6, 1, 8};
+    return 0;
+}
