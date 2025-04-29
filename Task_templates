@@ -11,7 +11,7 @@ size_t count_elem(const containertype& container, const elementstype& elements)
     size_t counter = 0;
     for(int i = 0; i < elements.size(); i++)
     {
-        el = elements[i];
+        auto el = elements[i];
         if(std::find(std::begin(container),std::end(container),el) != std::end(container))
         {
             counter++;
@@ -25,5 +25,6 @@ int main()
 {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
     std::vector<int> elements_to_check = {5 ,6, 1, 8};
+    std::cout << "I founded " << count_elem(vec, elements_to_check) << " elements.";
     return 0;
 }
